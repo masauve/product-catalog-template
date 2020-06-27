@@ -10,11 +10,11 @@ This repository contains the files needed to install the demo in your own cluste
 
 The demo does require a number of pre-requisites to work including:
 
-a. An OpenShift 4.3 cluster or later
-b. An installation of ArgoCD in that cluster
-c. [OpenShift Pipelines](https://www.openshift.com/learn/topics/pipelines) operator be installed
-d. [Sealed Secrets](https://github.com/bitnami-labs/sealed-secrets) operator be installed
-e. An external image registry where you have rights to pull and push images, the demo is configured for [quay.io](https://quay.io/repository) but you can use anything. Note the demo assumes that the repos are public, so a credential is needed to push images but not pull.
+1. An OpenShift 4.3 cluster or later
+2. An installation of ArgoCD in that cluster
+3. [OpenShift Pipelines](https://www.openshift.com/learn/topics/pipelines) operator be installed
+4. [Sealed Secrets](https://github.com/bitnami-labs/sealed-secrets) operator be installed
+5. An external image registry where you have rights to pull and push images, the demo is configured for [quay.io](https://quay.io/repository) but you can use anything. Note the demo assumes that the repos are public, so a credential is needed to push images but not pull.
 
 ##### ArgoCD
 
