@@ -76,7 +76,21 @@ And the use kubeseal to create a sealedsecret equivalent of it.
 
 The git hub secret needs your username, github personal access token as password and email address. Note that the github secret is only needed if you want to use the pipeline which creates a PR in github to push changes to production.
 
-The github personal access token you create mush have full rights on ```repo``` plus ```read:org``` under ```admin:org``` and ```read:user``` under ```user``` to create PRs.
+The github personal access token you create mush have full rights on ```repo``` plus ```read:org``` under ```admin:org``` and ```read:user``` under ```user``` to create PRs. The github secret also requires a tekton annotation as well, here is an example:
+
+```
+apiVersion: v1
+kind: Secret
+metadata:
+  name: github
+  annotations:
+    tekton.dev/git-0: https://github.com
+type: kubernetes.io/basic-auth
+stringData:
+  username: gnunn1
+  password: xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  email: gnunn@somewhere.com
+```
 
 Finally there is a default rolebinding to make the project available to user1, you can remove this if not needed or change it to a different username that is appropriate for your cluster.
 
