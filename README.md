@@ -56,7 +56,7 @@ At a high level the installation process is as follows:
 
 With regards to point #4, here are the specific things you need to modify:
 
-##### cicd
+#### cicd
 
 You will need to replace the sealed secrets for github and docker here with ones that align with your sealed secrets key and credentials for your environment.
 
@@ -80,7 +80,7 @@ The github personal access token you create mush have full rights on ```repo``` 
 
 Finally there is a default rolebinding to make the project available to user1, you can remove this if not needed or change it to a different username that is appropriate for your cluster.
 
-###### dev, test and prod
+#### dev, test and prod
 
 Update the patch.yaml file to reflect the wildcard address of your cluster as well as your external registry where the images will be stored.
 
@@ -88,11 +88,11 @@ In the prod you will also need to update the ```patch-client-deployment.yaml``` 
 
 Finally similarly, like the cicd overlay you can remove or patch the user1 rolebinding as desired.
 
-###### metrics
+#### metrics
 
 No changes as there are no cluster specific patches required
 
-###### argocd
+#### argocd
 
 ArgoCD works by deploying ```AppProject``` and ```Application``` objects that define the applications that we want to deploy. In our case we will be deploying several applications via ArgoCD. An ArgoCD ```Application``` contains a reference to a git repo which defines what we want to deploy. In order to specify our kustomized cluster overlay we need to patch these application references to point to the git repo and path that represents our cluster.
 
