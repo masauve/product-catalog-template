@@ -9,8 +9,19 @@ spec:
         - name: server
           env:
           - name: CORS_ORIGIN
-            value: http://client-product-catalog-test.apps.cluster.ocplab.com
-          image: quay.io/gnunn/server:latest
+            value: http://client-product-catalog-test.<your-wildcard>
+          image: quay.io/<your-repo>/server:latest
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client
+spec:
+  template:
+    spec:
+      containers:
+        - name: client
+          image: quay.io/<your-repo>/client:latest
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -19,6 +30,6 @@ metadata:
 data:
   config.js: |-
     window.ENV = {
-      "API_URL":"http://server-product-catalog-test.apps.cluster.ocplab.com",
+      "API_URL":"http://server-product-catalog-test.<your-wildcard>",
       "API_KEY":"	43fbc9b33302db65d58553e27d1679ac"
     }

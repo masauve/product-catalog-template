@@ -1,3 +1,6 @@
 - op: replace
+  path: /spec/source/repoURL
+  value: https://github.com/<Your-org>/product-catalog-template
+- op: replace
   path: /spec/source/path
-  value: clusters/overlays/ocplab/test
+  value: clusters/overlays/<your-cluster>/test

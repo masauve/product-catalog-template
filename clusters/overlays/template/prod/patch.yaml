@@ -9,8 +9,7 @@ spec:
         - name: server
           env:
           - name: CORS_ORIGIN
-            value: http://client-product-catalog-prod.apps.cluster.ocplab.com
-          image: quay.io/gnunn/server:latest
+            value: http://client-product-catalog-prod.<your-wildcard>
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -19,6 +18,6 @@ metadata:
 data:
   config.js: |-
     window.ENV = {
-      "API_URL":"http://server-product-catalog-prod.apps.cluster.ocplab.com",
+      "API_URL":"http://server-product-catalog-prod.<your-wildcard>",
       "API_KEY":"	43fbc9b33302db65d58553e27d1679ac"
     }
