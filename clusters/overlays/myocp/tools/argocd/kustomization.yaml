@@ -3,7 +3,6 @@ kind: Kustomization
 
 bases:
 - https://github.com/masauve/product-catalog/environments/overlays/tools/argocd/apps
-- https://github.com/masauve/product-catalog/environments/overlays/tools/argocd/manager
 
 
 patchesJson6902:
