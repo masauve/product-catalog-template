@@ -9,8 +9,8 @@ spec:
         - name: server
           env:
           - name: CORS_ORIGIN
-            value: http://client-product-catalog-dev.<your-wildcard>
-          image: quay.io/<your-repo>/server:latest
+            value: http://client-product-catalog-dev.apps.ocp.myocp.net
+          image: quay.io/msauve/server:latest
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: client
-          image: quay.io/<your-repo>/client:latest
+          image: quay.io/msauve/client:latest
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -30,6 +30,6 @@ metadata:
 data:
   config.js: |-
     window.ENV = {
-      "API_URL":"http://server-product-catalog-dev.<your-wildcard>",
+      "API_URL":"http://server-product-catalog-dev.apps.ocp.myocp.net",
       "API_KEY":"	43fbc9b33302db65d58553e27d1679ac"
     }
