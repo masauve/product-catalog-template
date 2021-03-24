@@ -1,0 +1,162 @@
+{
+  "apiVersion": "v1",
+  "kind": "Namespace",
+  "metadata": {
+    "annotations": {
+      "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Namespace\",\"metadata\":{\"annotations\":{\"openshift.io/description\":\"Project for ci/cd tools for product catalog application\",\"openshift.io/display-name\":\"Product Catalog CI/CD\"},\"labels\":{\"argocd.argoproj.io/instance\":\"product-catalog-cicd\"},\"name\":\"product-catalog-cicd\"}}\n",
+      "openshift.io/description": "Project for ci/cd tools for product catalog application",
+      "openshift.io/display-name": "Product Catalog CI/CD",
+      "openshift.io/sa.scc.mcs": "s0:c31,c0",
+      "openshift.io/sa.scc.supplemental-groups": "1000930000/10000",
+      "openshift.io/sa.scc.uid-range": "1000930000/10000"
+    },
+    "creationTimestamp": "2021-03-23T17:02:18Z",
+    "deletionTimestamp": "2021-03-23T17:22:21Z",
+    "labels": {
+      "argocd.argoproj.io/instance": "product-catalog-cicd"
+    },
+    "managedFields": [
+      {
+        "apiVersion": "v1",
+        "fieldsType": "FieldsV1",
+        "fieldsV1": {
+          "f:metadata": {
+            "f:annotations": {
+              ".": {},
+              "f:kubectl.kubernetes.io/last-applied-configuration": {},
+              "f:openshift.io/description": {},
+              "f:openshift.io/display-name": {}
+            },
+            "f:labels": {
+              ".": {},
+              "f:argocd.argoproj.io/instance": {}
+            }
+          },
+          "f:status": {
+            "f:phase": {}
+          }
+        },
+        "manager": "argocd-application-controller",
+        "operation": "Update",
+        "time": "2021-03-23T17:02:18Z"
+      },
+      {
+        "apiVersion": "v1",
+        "fieldsType": "FieldsV1",
+        "fieldsV1": {
+          "f:metadata": {
+            "f:annotations": {
+              "f:openshift.io/sa.scc.mcs": {},
+              "f:openshift.io/sa.scc.supplemental-groups": {},
+              "f:openshift.io/sa.scc.uid-range": {}
+            }
+          }
+        },
+        "manager": "cluster-policy-controller",
+        "operation": "Update",
+        "time": "2021-03-23T17:02:18Z"
+      },
+      {
+        "apiVersion": "v1",
+        "fieldsType": "FieldsV1",
+        "fieldsV1": {
+          "f:status": {
+            "f:conditions": {
+              ".": {},
+              "k:{\"type\":\"NamespaceContentRemaining\"}": {
+                ".": {},
+                "f:lastTransitionTime": {},
+                "f:message": {},
+                "f:reason": {},
+                "f:status": {},
+                "f:type": {}
+              },
+              "k:{\"type\":\"NamespaceDeletionContentFailure\"}": {
+                ".": {},
+                "f:lastTransitionTime": {},
+                "f:message": {},
+                "f:reason": {},
+                "f:status": {},
+                "f:type": {}
+              },
+              "k:{\"type\":\"NamespaceDeletionDiscoveryFailure\"}": {
+                ".": {},
+                "f:lastTransitionTime": {},
+                "f:message": {},
+                "f:reason": {},
+                "f:status": {},
+                "f:type": {}
+              },
+              "k:{\"type\":\"NamespaceDeletionGroupVersionParsingFailure\"}": {
+                ".": {},
+                "f:lastTransitionTime": {},
+                "f:message": {},
+                "f:reason": {},
+                "f:status": {},
+                "f:type": {}
+              },
+              "k:{\"type\":\"NamespaceFinalizersRemaining\"}": {
+                ".": {},
+                "f:lastTransitionTime": {},
+                "f:message": {},
+                "f:reason": {},
+                "f:status": {},
+                "f:type": {}
+              }
+            }
+          }
+        },
+        "manager": "kube-controller-manager",
+        "operation": "Update",
+        "time": "2021-03-23T17:22:28Z"
+      }
+    ],
+    "name": "product-catalog-cicd",
+    "resourceVersion": "22524359",
+    "selfLink": "/api/v1/namespaces/product-catalog-cicd",
+    "uid": "63c147e5-1611-4807-91be-156858de5842"
+  },
+  "spec": {
+    "finalizers": []
+  },
+  "status": {
+    "conditions": [
+      {
+        "lastTransitionTime": "2021-03-23T17:22:26Z",
+        "message": "Discovery failed for some groups, 4 failing: unable to retrieve the complete list of server APIs: admission.cluster.open-cluster-management.io/v1: the server is currently unable to handle the request, admission.work.open-cluster-management.io/v1: the server is currently unable to handle the request, proxy.open-cluster-management.io/v1beta1: the server is currently unable to handle the request, webhook.certmanager.k8s.io/v1beta1: the server is currently unable to handle the request",
+        "reason": "DiscoveryFailed",
+        "status": "True",
+        "type": "NamespaceDeletionDiscoveryFailure"
+      },
+      {
+        "lastTransitionTime": "2021-03-23T17:22:28Z",
+        "message": "All legacy kube types successfully parsed",
+        "reason": "ParsedGroupVersions",
+        "status": "False",
+        "type": "NamespaceDeletionGroupVersionParsingFailure"
+      },
+      {
+        "lastTransitionTime": "2021-03-23T17:22:51Z",
+        "message": "Failed to delete all resource types, 1 remaining: unexpected items still remain in namespace: product-catalog-cicd for gvr: /v1, Resource=pods",
+        "reason": "ContentDeletionFailed",
+        "status": "True",
+        "type": "NamespaceDeletionContentFailure"
+      },
+      {
+        "lastTransitionTime": "2021-03-23T17:22:28Z",
+        "message": "Some resources are remaining: pods. has 2 resource instances",
+        "reason": "SomeResourcesRemain",
+        "status": "True",
+        "type": "NamespaceContentRemaining"
+      },
+      {
+        "lastTransitionTime": "2021-03-23T17:22:36Z",
+        "message": "All content-preserving finalizers finished",
+        "reason": "ContentHasNoFinalizers",
+        "status": "False",
+        "type": "NamespaceFinalizersRemaining"
+      }
+    ],
+    "phase": "Terminating"
+  }
+}
