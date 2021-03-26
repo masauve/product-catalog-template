@@ -6,12 +6,12 @@
       "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Namespace\",\"metadata\":{\"annotations\":{\"openshift.io/description\":\"Project for test environment of product catalog application\",\"openshift.io/display-name\":\"Product Catalog Test\"},\"labels\":{\"argocd.argoproj.io/instance\":\"product-catalog-test\",\"size\":\"medium\"},\"name\":\"product-catalog-test\"}}\n",
       "openshift.io/description": "Project for test environment of product catalog application",
       "openshift.io/display-name": "Product Catalog Test",
-      "openshift.io/sa.scc.mcs": "s0:c29,c4",
-      "openshift.io/sa.scc.supplemental-groups": "1000820000/10000",
-      "openshift.io/sa.scc.uid-range": "1000820000/10000"
+      "openshift.io/sa.scc.mcs": "s0:c32,c14",
+      "openshift.io/sa.scc.supplemental-groups": "1001020000/10000",
+      "openshift.io/sa.scc.uid-range": "1001020000/10000"
     },
-    "creationTimestamp": "2021-03-23T14:37:54Z",
-    "deletionTimestamp": "2021-03-26T13:15:37Z",
+    "creationTimestamp": "2021-03-26T13:25:21Z",
+    "deletionTimestamp": "2021-03-26T18:12:08Z",
     "labels": {
       "argocd.argoproj.io/instance": "product-catalog-test",
       "size": "medium"
@@ -40,7 +40,7 @@
         },
         "manager": "argocd-application-controller",
         "operation": "Update",
-        "time": "2021-03-23T14:37:54Z"
+        "time": "2021-03-26T13:25:21Z"
       },
       {
         "apiVersion": "v1",
@@ -56,7 +56,7 @@
         },
         "manager": "cluster-policy-controller",
         "operation": "Update",
-        "time": "2021-03-23T14:37:54Z"
+        "time": "2021-03-26T13:25:21Z"
       },
       {
         "apiVersion": "v1",
@@ -110,13 +110,13 @@
         },
         "manager": "kube-controller-manager",
         "operation": "Update",
-        "time": "2021-03-26T13:15:48Z"
+        "time": "2021-03-26T18:12:18Z"
       }
     ],
     "name": "product-catalog-test",
-    "resourceVersion": "32767847",
+    "resourceVersion": "33577283",
     "selfLink": "/api/v1/namespaces/product-catalog-test",
-    "uid": "0a3b806f-2118-4783-bab7-0360ecd00e75"
+    "uid": "c5690dff-e025-4cd9-863a-5c9969b7a46a"
   },
   "spec": {
     "finalizers": []
@@ -124,35 +124,35 @@
   "status": {
     "conditions": [
       {
-        "lastTransitionTime": "2021-03-26T13:15:42Z",
+        "lastTransitionTime": "2021-03-26T18:12:13Z",
         "message": "Discovery failed for some groups, 2 failing: unable to retrieve the complete list of server APIs: admission.hive.openshift.io/v1: the server is currently unable to handle the request, proxy.open-cluster-management.io/v1beta1: the server is currently unable to handle the request",
         "reason": "DiscoveryFailed",
         "status": "True",
         "type": "NamespaceDeletionDiscoveryFailure"
       },
       {
-        "lastTransitionTime": "2021-03-26T13:15:48Z",
+        "lastTransitionTime": "2021-03-26T18:12:18Z",
         "message": "All legacy kube types successfully parsed",
         "reason": "ParsedGroupVersions",
         "status": "False",
         "type": "NamespaceDeletionGroupVersionParsingFailure"
       },
       {
-        "lastTransitionTime": "2021-03-26T13:15:48Z",
+        "lastTransitionTime": "2021-03-26T18:12:18Z",
         "message": "All content successfully deleted, may be waiting on finalization",
         "reason": "ContentDeleted",
         "status": "False",
         "type": "NamespaceDeletionContentFailure"
       },
       {
-        "lastTransitionTime": "2021-03-26T13:15:58Z",
-        "message": "All content successfully removed",
-        "reason": "ContentRemoved",
-        "status": "False",
+        "lastTransitionTime": "2021-03-26T18:12:18Z",
+        "message": "Some resources are remaining: pods. has 2 resource instances",
+        "reason": "SomeResourcesRemain",
+        "status": "True",
         "type": "NamespaceContentRemaining"
       },
       {
-        "lastTransitionTime": "2021-03-26T13:15:56Z",
+        "lastTransitionTime": "2021-03-26T18:12:18Z",
         "message": "All content-preserving finalizers finished",
         "reason": "ContentHasNoFinalizers",
         "status": "False",
