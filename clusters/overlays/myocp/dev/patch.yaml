@@ -10,7 +10,7 @@ spec:
           env:
           - name: CORS_ORIGIN
             value: http://client-product-catalog-dev.apps.ocp.myocp.net
-          image: quay.io/msauve/server:latest
+          image: quay.io/msauve/server:dev
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: client
-          image: quay.io/msauve/client:latest
+          image: quay.io/msauve/client:dev
 ---
 apiVersion: v1
 kind: ConfigMap
